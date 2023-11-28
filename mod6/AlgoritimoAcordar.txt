@@ -1,0 +1,41 @@
+Algoritimo Acordar:
+INICIO
+    1- Abrir olhos.
+    2- levantar da cama.
+    3 - caminhar até a porta.
+    3- Abrir a porta.
+        1- se porta trancada.
+            1 - Colocar chave da fechadura.
+            2 - girar a chave.
+            3 - Colocar a mao na maçaneta.
+            4 - Girar a maçaneta.
+            5 - Puxar a maçaneta.
+        2 - se porta destrancada.
+            1 - Colocar a mao na maçaneta.
+            2 - Girar maçaneta.
+            3 - Puxar maçaneta.
+    4 - Caminhar até o banheiro.
+    5 - Escovar os dentes.
+        1 - Pegar pasta de dente.
+        2 - Abrir pasta dente.
+            1 - Colocar a mão na tampa da pasta de dente.
+            2 - Girar a Tampa.
+            3 - colocar tampa sobre a pia.
+            4 - Colocar a tampa sobre a pia.
+        3 - Passar pasta de dente na escova.
+            1 - Pegar escova.
+            2 - apertar pasta de dentes sobre a escova.
+            colocar escova sobre a pia.
+        4 - Fechar pasta de dente.
+            1 - colocar a mao sobre tampa na pia.
+            2 - Pegar tampa na pia.       
+            3 - colocar tampa na pasta de dente.
+            4 - Girar a tampa.
+            5 - Colocar pasta de dente sobre a pia.
+        5 - Pegar escova.
+        6 - Colocar  escova na boca.
+        7 - Escovar os dentes.
+        8 - Enxaguar escova.
+        9 - Guardar escova.
+        5 - Enxaguar a Boca.
+ FIM 
