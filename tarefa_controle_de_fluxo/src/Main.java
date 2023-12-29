@@ -17,7 +17,8 @@ public class Main {
         System.out.println("-----------------------------");
         mediaFinal = media(notaPortugues, notaMatematica, notaGeografia, notaHistoria);
 
-        if(mediaFinal > 5) {
+        if(mediaFinal >= 7) {
+
             System.out.println("O aluno foi aprovado com a média: " + mediaFinal + ".");
             System.out.println("As notas do aluno foram:");
             System.out.println("A nota de Português foi de: " + notaPortugues + ".");
@@ -26,7 +27,18 @@ public class Main {
             System.out.println("A nota de História foi de: " + notaHistoria + ".");
             System.out.println("-----------------------------");
             System.out.println("Até mais!");
-        } else {
+
+        } else if (mediaFinal >= 5 && mediaFinal <= 7) {
+
+            System.out.println("O aluno ficou de recuperação com a média: " + mediaFinal + ".");
+            System.out.println("As notas do aluno foram:");
+            System.out.println("A nota de Português foi de: " + notaPortugues + ".");
+            System.out.println("A nota de Matemática foi de: " + notaMatematica + ".");
+            System.out.println("A nota de Geografia foi de: " + notaGeografia + ".");
+            System.out.println("A nota de História foi de: " + notaHistoria + ".");
+            System.out.println("-----------------------------");
+            System.out.println("Até mais!");
+        } else if (mediaFinal < 5) {
             System.out.println("O aluno foi reprovado com a média: " + mediaFinal + ".");
             System.out.println("As notas do aluno foram:");
             System.out.println("A nota de Português foi de: " + notaPortugues + ".");
