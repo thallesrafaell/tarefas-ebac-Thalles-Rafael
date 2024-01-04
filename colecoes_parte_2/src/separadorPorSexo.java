@@ -1,12 +1,11 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class separadorPorSexo {
     public static void main(String args []) {
         System.out.println("Olá, Mundo");
         Scanner scanner = new Scanner(System.in);
 
-        ArrayList<Pessoa> homens = new ArrayList<>();
+        List<Pessoa> homens = new ArrayList<>();
         ArrayList<Pessoa> mulheres = new ArrayList<>();
         int continuar;
         System.out.println("********** Coleçôes Parte 2 **********");
@@ -41,6 +40,11 @@ public class separadorPorSexo {
             scanner.nextLine();
         }while (continuar == 1);
 
+        Comparator<Pessoa> comparadorPorNome = Comparator.comparing(Pessoa::getNome);
+
+
+       homens.sort(comparadorPorNome);
+
         System.out.println("********** Masculino **********");
         for(Pessoa homem : homens){
 
@@ -48,6 +52,7 @@ public class separadorPorSexo {
         }
         System.out.println(" ");
         System.out.println("********** Feminino **********");
+        mulheres.sort(comparadorPorNome);
         for(Pessoa mulher : mulheres){
 
             System.out.println("Nome:" + mulher.nome  + " sexo: " + mulher.sexo);
