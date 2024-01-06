@@ -52,6 +52,7 @@ public class separadorPorSexo {
         }
         System.out.println(" ");
         System.out.println("********** Feminino **********");
+
         mulheres.sort(comparadorPorNome);
         for(Pessoa mulher : mulheres){
 
