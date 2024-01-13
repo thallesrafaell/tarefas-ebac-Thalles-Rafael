@@ -15,14 +15,17 @@ public class Main {
         carList.add(fabrica.getKwid());
         carList.add(fabrica.getUno());
 
+        imprimir(carList);
+        System.out.println("Até Mais!");
 
-        for (Car carro : carList){
-            System.out.println(carro.toString());
+    }
+
+    public static <T> void imprimir(List<T> list){
+        System.out.println("__________________Lista de Carros__________________");
+
+        for (T item : list){
+            System.out.println(item.toString());
+            System.out.println("___________________________________________________");
         }
-
-
-
-
-
     }
 }

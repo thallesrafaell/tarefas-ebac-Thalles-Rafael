@@ -1,4 +1,4 @@
-public abstract class Car implements Comparable<Car>{
+public abstract class Car {
 
     private String brand;
 
@@ -13,12 +13,10 @@ public abstract class Car implements Comparable<Car>{
 
     @Override
     public String toString() {
-        return  "Marca: " + brand + '\'' +
-                ", Modelo: " + model + '\'' +
+        return  "Marca: " + brand +
+                ", Modelo: " + model +
                 ", Motor: " + engine;
     }
-    public int compareModel(Car otherCar){
-        return this.model.compareTo(otherCar.model);
-    }
+
 
 }
