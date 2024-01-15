@@ -8,4 +8,8 @@ public class AnnotationClasse {
     private String nome;
 
 
+    public AnnotationClasse(String nome){
+        this.nome = nome;
+    }
+
 }
