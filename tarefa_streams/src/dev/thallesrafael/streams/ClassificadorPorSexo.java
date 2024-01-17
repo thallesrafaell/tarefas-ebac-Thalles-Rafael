@@ -18,13 +18,13 @@ public class ClassificadorPorSexo {
         do{
             System.out.println("Vamos classificar uma pessoa:");
             System.out.println("Digite o nome da pessoa e o sexo separado por virgula: ");
-            System.out.println("Digite M para Masculino e F para feminino. ");
-            System.out.println("Ex: Maria, m");
+            System.out.println("Digite Masculino ou Feminino. ");
+            System.out.println("Ex: Maria, Feminino");
 
             String pessoa = scanner.nextLine();
-            String[] dadosPessoa = pessoa.split(",");
+            String[] dadosPessoa = pessoa.split(", ");
 
-            Pessoa novaPessoa = new Pessoa(dadosPessoa[0], dadosPessoa[1]);
+            Pessoa novaPessoa = new Pessoa(dadosPessoa[0], dadosPessoa[1].toLowerCase());
             pessoas.add(novaPessoa);
 
             System.out.println("Deseja Cadastrar outra pessoa?");
@@ -34,11 +34,28 @@ public class ClassificadorPorSexo {
 
         }while (continuar == 1);
 
+
+
         System.out.println("---------------Lista Completa---------------");
+
         Stream<Pessoa> streamPessoas = pessoas.stream();
         streamPessoas.forEach(pessoa -> System.out.println(pessoa.toString()));
+        System.out.println(" ");
 
-        
+        System.out.println("---------------Lista Feminina---------------");
+
+        Stream<Pessoa> mulheres =  pessoas.stream().filter(pessoa -> pessoa.getSexo().equals("feminino"));
+        mulheres.forEach(pessoa -> System.out.println(pessoa.toString()));
+        System.out.println(" ");
+
+        System.out.println("---------------Lista Maculina---------------");
+
+        Stream<Pessoa> homens =  pessoas.stream().filter(pessoa -> pessoa.getSexo().equals("masculino"));
+        homens.forEach(pessoa -> System.out.println(pessoa.toString()));
+        System.out.println(" ");
+
+
+
 
 
 
