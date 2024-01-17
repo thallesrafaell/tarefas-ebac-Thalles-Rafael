@@ -15,8 +15,9 @@ public class ClassificadorPorSexo {
         List<Pessoa> pessoas = new ArrayList<>();
         long continuar = 0;
 
+            System.out.println("Vamos cadastrar uma pessoa:");
         do{
-            System.out.println("Vamos classificar uma pessoa:");
+
             System.out.println("Digite o nome da pessoa e o sexo separado por virgula: ");
             System.out.println("Digite Masculino ou Feminino. ");
             System.out.println("Ex: Maria, Feminino");
