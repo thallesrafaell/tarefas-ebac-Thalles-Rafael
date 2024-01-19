@@ -27,6 +27,6 @@ public class ClienteServiceTest {
         ClienteService service = new ClienteService(clienteDao);
         String retorno = service.salvar();
         Assert.assertEquals("Sucesso", retorno);
-        
+
     }
 }
