@@ -3,6 +3,7 @@ package test.java.dev.thallesrafael;
 import main.java.dev.thallesrafael.dao.ClienteDao;
 import main.java.dev.thallesrafael.dao.IClienteDAO;
 import main.java.dev.thallesrafael.domain.Cliente;
+import main.java.dev.thallesrafael.exceptions.TipoChaveNaoEncontradaException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class ClienteDAOTest {
     }
 
     @Before
-    public void init(){
+    public void init() throws TipoChaveNaoEncontradaException {
         cliente = new Cliente();
         cliente.setNome("Thalles Rafael");
         cliente.setCPF(12345678910L);
@@ -27,26 +28,26 @@ public class ClienteDAOTest {
         cliente.getCidade("Santa Vitória MG");
         cliente.getEstado("Minas Gerais");
 
-        clienteDAO.salvar(cliente);
+        clienteDAO.cadastrar(cliente);
     }
 
     @Test
-    public void salvarCliente(){
-        Boolean retorno = clienteDAO.salvar(cliente);
+    public void salvarCliente() throws TipoChaveNaoEncontradaException {
+        Boolean retorno = clienteDAO.cadastrar(cliente);
         Assert.assertTrue(retorno);
     }
 
     @Test
     public void pesquisarCliente(){
-        Cliente clienteConsultado = clienteDAO.bucarPorCpf(cliente.getCPF());
+        Cliente clienteConsultado = clienteDAO.consultar(cliente.getCPF());
     }
 
     public void excluirCliente(){
         clienteDAO.excluir(cliente.getCPF());
     }
 
-    public void alterarCliente(){
-        clienteDAO.alterar(cliente.getCPF());
+    public void alterarCliente() throws TipoChaveNaoEncontradaException {
+        clienteDAO.alterar(cliente);
     }
 
 

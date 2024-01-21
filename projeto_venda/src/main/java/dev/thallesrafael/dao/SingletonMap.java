@@ -1,4 +1,4 @@
-package main.java.dev.thallesrafael.fabrica;
+package main.java.dev.thallesrafael.dao;
 
 import java.util.HashMap;
 import java.util.Map;

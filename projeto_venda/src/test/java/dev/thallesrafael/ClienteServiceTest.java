@@ -1,6 +1,7 @@
 package test.java.dev.thallesrafael;
 
 import main.java.dev.thallesrafael.dao.IClienteDAO;
+import main.java.dev.thallesrafael.exceptions.TipoChaveNaoEncontradaException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +23,7 @@ public class ClienteServiceTest {
         clienteService = new ClienteService(dao);
     }
         @Before
-        public void init(){
+        public void init() throws TipoChaveNaoEncontradaException {
             cliente = new Cliente();
             cliente.setNome("Thalles");
             cliente.setCPF(12345678910L);
@@ -42,7 +43,7 @@ public class ClienteServiceTest {
         }
 
         @Test
-        public void salvarCliente(){
+        public void salvarCliente() throws TipoChaveNaoEncontradaException {
          Boolean retorno = clienteService.salvar(cliente);
             Assert.assertTrue(retorno);
         }
@@ -52,10 +53,10 @@ public class ClienteServiceTest {
             clienteService.excluir(cliente.getCPF());
         }
 
-    public void alterarCliente(){
+    public void alterarCliente() throws TipoChaveNaoEncontradaException {
 
         cliente.setNome("Thalles Rafael");
-        clienteService.alterar(cliente.getCPF());
+        clienteService.alterar(cliente);
         Assert.assertEquals("Thalles Rafael", cliente.getNome());
     }
 

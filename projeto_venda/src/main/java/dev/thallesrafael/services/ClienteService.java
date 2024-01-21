@@ -2,6 +2,7 @@ package main.java.dev.thallesrafael.services;
 
 import main.java.dev.thallesrafael.dao.IClienteDAO;
 import main.java.dev.thallesrafael.domain.Cliente;
+import main.java.dev.thallesrafael.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteService implements IClienteService {
 
@@ -11,14 +12,14 @@ public class ClienteService implements IClienteService {
         this.clienteDAO = dao;
     }
     @Override
-    public Boolean salvar(Cliente cliente) {
+    public Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException {
 
-        return clienteDAO.salvar(cliente);
+        return clienteDAO.cadastrar(cliente);
     }
 
     @Override
-    public Cliente bucarPorCpf(Long cpf) {
-        return clienteDAO.bucarPorCpf(cpf);
+    public Cliente bucarPorCpf(Long cpf)  {
+        return clienteDAO.consultar(cpf);
     }
 
     @Override
@@ -27,7 +28,7 @@ public class ClienteService implements IClienteService {
     }
 
     @Override
-    public void alterar(Long cpf) {
+    public void alterar(Cliente cpf) throws TipoChaveNaoEncontradaException {
         clienteDAO.alterar(cpf);
     }
 }

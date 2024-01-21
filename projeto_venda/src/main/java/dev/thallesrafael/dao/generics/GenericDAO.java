@@ -1,5 +1,7 @@
 package main.java.dev.thallesrafael.dao.generics;
 
+
+
 import main.java.anotacao.TipoChave;
 import main.java.dev.thallesrafael.domain.Persistente;
 import main.java.dev.thallesrafael.exceptions.TipoChaveNaoEncontradaException;
@@ -13,12 +15,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-
-/**
- * @author rodrigo.pires
- *
- * Classe genérica que implementa interface genérica com os métodos de CRUD
- */
 public abstract class GenericDAO<T extends Persistente, E extends Serializable> implements IGenericDAO<T,E> {
 
     //protected Map<Class, Map<Long, T>> map = new HashMap<>();
@@ -26,14 +22,14 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
     /**
      * Necessário utilizar Singleton para ter apenas um MAP no sistema
      */
-    private br.com.rpires.dao.generic.SingletonMap singletonMap;
+    private SingletonMap singletonMap;
 
     public abstract Class<T> getTipoClasse();
 
-    public abstract void atualiarDados(T entity, T entityCadastrado);
+    public abstract void atualizarDados(T entity, T entityCadastrado);
 
     public GenericDAO() {
-        this.singletonMap = br.com.rpires.dao.generic.SingletonMap.getInstance();
+        this.singletonMap = SingletonMap.getInstance();
     }
 
     public E getChave(T entity) throws TipoChaveNaoEncontradaException {
@@ -75,14 +71,14 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
         return true;
     }
 
-	private Map<E, T> getMapa() {
-		Map<E, T> mapaInterno = (Map<E, T>) this.singletonMap.getMap().get(getTipoClasse());
-		if (mapaInterno == null) {
-			mapaInterno = new HashMap<>();
-			this.singletonMap.getMap().put(getTipoClasse(), mapaInterno);
-		}
-		return mapaInterno;
-	}
+    private Map<E, T> getMapa() {
+        Map<E, T> mapaInterno = (Map<E, T>) this.singletonMap.getMap().get(getTipoClasse());
+        if (mapaInterno == null) {
+            mapaInterno = new HashMap<>();
+            this.singletonMap.getMap().put(getTipoClasse(), mapaInterno);
+        }
+        return mapaInterno;
+    }
 
     @Override
     public void excluir(E valor) {
@@ -100,7 +96,7 @@ public abstract class GenericDAO<T extends Persistente, E extends Serializable> 
         E chave = getChave(entity);
         T objetoCadastrado = mapaInterno.get(chave);
         if (objetoCadastrado != null) {
-            atualiarDados(entity, objetoCadastrado);
+            atualizarDados(entity, objetoCadastrado);
         }
     }
 

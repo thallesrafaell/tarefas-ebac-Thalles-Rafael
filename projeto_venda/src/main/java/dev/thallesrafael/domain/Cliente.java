@@ -1,8 +1,12 @@
 package main.java.dev.thallesrafael.domain;
 
-public class Cliente {
+import main.java.anotacao.TipoChave;
+
+public class Cliente implements Persistente {
 
     private String nome;
+
+    @TipoChave("getCPF")
     private Long CPF;
     private Long tel;
     private String endereco;
@@ -68,5 +72,10 @@ public class Cliente {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+
+    public Long getCodigo() {
+        return null;
     }
 }

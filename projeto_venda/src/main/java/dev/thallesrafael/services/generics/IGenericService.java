@@ -1,4 +1,7 @@
-package main.java.dev.thallesrafael.dao.generics;
+/**
+ * 
+ */
+package main.java.dev.thallesrafael.services.generics;
 
 
 import main.java.dev.thallesrafael.domain.Persistente;
@@ -7,15 +10,15 @@ import main.java.dev.thallesrafael.exceptions.TipoChaveNaoEncontradaException;
 import java.io.Serializable;
 import java.util.Collection;
 
-public interface IGenericDAO <T extends Persistente, E extends Serializable> {
-
-    /**
+public interface IGenericService <T extends Persistente, E extends Serializable> {
+	
+	/**
      * Método para cadastrar novos registro no banco de dados
      *
      * @param entity a ser cadastrado
      * @return retorna verdadeiro para cadastrado e falso para não cadastrado
      */
-    public Boolean cadastrar(T entity) throws TipoChaveNaoEncontradaException;
+    public Boolean cadastrar(T entity) throws TipoChaveNaoEncontradaException, TipoChaveNaoEncontradaException;
 
     /**
      * Método para excluir um registro do banco de dados
@@ -45,4 +48,5 @@ public interface IGenericDAO <T extends Persistente, E extends Serializable> {
      * @return Registros encontrados
      */
     public Collection<T> buscarTodos();
+
 }

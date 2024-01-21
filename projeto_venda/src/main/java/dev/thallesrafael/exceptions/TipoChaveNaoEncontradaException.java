@@ -1,8 +1,5 @@
 package main.java.dev.thallesrafael.exceptions;
 
-/**
- * @author rodrigo.pires
- */
 public class TipoChaveNaoEncontradaException extends Exception {
 
     

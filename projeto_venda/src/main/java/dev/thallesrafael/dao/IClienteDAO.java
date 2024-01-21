@@ -1,13 +1,10 @@
 package main.java.dev.thallesrafael.dao;
 
+import main.java.dev.thallesrafael.dao.generics.IGenericDAO;
 import main.java.dev.thallesrafael.domain.Cliente;
 
-public interface IClienteDAO {
-    Boolean salvar(Cliente cliente);
+import java.io.Serializable;
 
-    Cliente bucarPorCpf(Long cpf);
+public interface IClienteDAO  extends IGenericDAO<Cliente, Long> {
 
-    void excluir(Long cpf);
-
-    void alterar(Long cpf);
 }
