@@ -24,7 +24,7 @@ public class ClienteServiceTest {
         @Before
         public void init(){
             cliente = new Cliente();
-            cliente.setNome("Thalles Rafael");
+            cliente.setNome("Thalles");
             cliente.setCPF(12345678910L);
             cliente.setTel(12456789L);
             cliente.getEndereco("Sebastião Bonito");
@@ -51,5 +51,12 @@ public class ClienteServiceTest {
     public void excluirCliente(){
             clienteService.excluir(cliente.getCPF());
         }
+
+    public void alterarCliente(){
+
+        cliente.setNome("Thalles Rafael");
+        clienteService.alterar(cliente.getCPF());
+        Assert.assertEquals("Thalles Rafael", cliente.getNome());
+    }
 
 }

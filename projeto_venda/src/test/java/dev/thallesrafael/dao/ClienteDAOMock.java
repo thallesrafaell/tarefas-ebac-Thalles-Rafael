@@ -21,4 +21,9 @@ public class ClienteDAOMock implements IClienteDAO {
     public void excluir(Long cpf) {
 
     }
+
+    @Override
+    public void alterar(Long cpf) {
+
+    }
 }

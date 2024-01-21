@@ -45,5 +45,9 @@ public class ClienteDAOTest {
         clienteDAO.excluir(cliente.getCPF());
     }
 
+    public void alterarCliente(){
+        clienteDAO.alterar(cliente.getCPF());
+    }
+
 
 }

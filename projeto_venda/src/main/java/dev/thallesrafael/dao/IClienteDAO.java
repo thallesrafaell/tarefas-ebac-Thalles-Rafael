@@ -8,4 +8,6 @@ public interface IClienteDAO {
     Cliente bucarPorCpf(Long cpf);
 
     void excluir(Long cpf);
+
+    void alterar(Long cpf);
 }

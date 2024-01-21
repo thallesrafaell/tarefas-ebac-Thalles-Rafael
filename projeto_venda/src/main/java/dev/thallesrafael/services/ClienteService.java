@@ -23,6 +23,11 @@ public class ClienteService implements IClienteService {
 
     @Override
     public void excluir(Long cpf) {
+        clienteDAO.excluir(cpf);
+    }
 
+    @Override
+    public void alterar(Long cpf) {
+        clienteDAO.alterar(cpf);
     }
 }
